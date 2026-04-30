@@ -2,8 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
+{ config, pkgs, ... }
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -24,8 +23,11 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
+  
+  # Funciones experimentales
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+# Set your time zone.
   time.timeZone = "America/Guayaquil";
 
   # Select internationalisation properties.
@@ -52,12 +54,12 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "es";
-    variant = "nodeadkeys";
+    layout = "latam";
+    variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "es";
+  console.keyMap = "la-latin1";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -92,7 +94,10 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
+  
+  # zsh
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -105,6 +110,13 @@
     git
     neofetch
     fzf
+    vscode
+    brave
+    zsh
+    oh-my-zsh
+    zsh-autosuggestions
+    zsh-syntaxis-highlighting 
+    libinput
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
