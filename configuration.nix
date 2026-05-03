@@ -77,9 +77,17 @@
       theme = "robbyrussell"; # simple y rápido
       plugins = [ "git" ];
     };
+
+    promptInit = '' 
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
 
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
