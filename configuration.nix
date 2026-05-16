@@ -105,6 +105,7 @@
     eza # ls mejorado
     bat # cat mejorado
     zoxide # cd mejorado
+    pkgs.nixd 
   ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
