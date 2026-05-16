@@ -1,5 +1,5 @@
 {
-    security.sudo.extraConfig = "Defaults env_reset,pwfeedback";
+  security.sudo.extraConfig = "Defaults env_reset,pwfeedback";
   virtualisation.virtualbox.guest.enable = true;
   hardware.graphics.enable = true;
   services.printing.enable = true;
