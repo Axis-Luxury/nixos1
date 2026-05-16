@@ -5,7 +5,7 @@
 
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
-    zshCompletitions.enable = true;
+    enableCompletion = true;
 
     ohMyZsh = {
       enable = false;

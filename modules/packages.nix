@@ -17,6 +17,7 @@
     nix-index
     ranger
     yazi
+    zsh-completions
   ];
 } 
   
