@@ -86,7 +86,7 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 
   environment.systemPackages = with pkgs; [
