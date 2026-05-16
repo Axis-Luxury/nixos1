@@ -5,9 +5,10 @@
 
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
+    zshCompletitions.enable = true;
 
     ohMyZsh = {
-      enable = true;
+      enable = false;
       theme = "robbyrussell"; # simple y rápido
       plugins = [ "git" ];
     };

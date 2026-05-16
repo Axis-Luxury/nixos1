@@ -6,12 +6,6 @@
     git
     neofetch 
     fzf # buscador de terminal
-    vscode # Editor de código
-    brave #Navegador
-    zsh #shell
-    oh-my-zsh #zsh plugin 
-    zsh-autosuggestions #zsh plugin
-    zsh-syntax-highlighting #zsh plugin
     libinput # Touchpad support
     eza # ls mejorado
     bat # cat mejorado
@@ -21,6 +15,8 @@
     nix-search-tv
     nix-tree
     nix-index
+    ranger
+    yazi
   ];
 } 
   
