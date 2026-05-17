@@ -18,6 +18,7 @@
     ranger
     yazi
     zsh-completions
+    tree
   ];
 } 
   
