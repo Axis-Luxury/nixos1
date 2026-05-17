@@ -16,6 +16,7 @@
       specialArgs = {
         pkgsUnstable = import unstable {
           inherit system;
+          config.allowUnfree = true;
         };
       };
 
