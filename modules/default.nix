@@ -5,7 +5,7 @@
     ./networking.nix
     ./locale.nix
 
-    ./cosmic.nix
+    ./gnome.nix
 
     ./alexis.nix
     ./zsh.nix
