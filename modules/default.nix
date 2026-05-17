@@ -4,14 +4,14 @@
     ./nix.nix
     ./networking.nix
     ./locale.nix
-    ./gnome.nix
+
+    ./cosmic.nix
+
     ./alexis.nix
     ./zsh.nix
     ./fonts.nix
     ./services.nix
     ./packages.nix
-    ./services.nix
-    ./fonts.nix
     ./binares.nix
   ];
 }
