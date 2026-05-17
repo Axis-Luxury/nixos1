@@ -4,7 +4,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     git
-    neofetch 
+    fastfetch # Fast fetch for nix
     fzf # buscador de terminal
     libinput # Touchpad support
     eza # ls mejorado
@@ -19,6 +19,7 @@
     yazi
     zsh-completions
     tree
+    htop
   ];
 } 
   
