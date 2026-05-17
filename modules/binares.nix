@@ -1,7 +1,7 @@
-{pkgs, ...}:
+{pkgs, pkgsUnstable, ...}:
 {
   environment.systemPackages = with pkgs; [
-    vscode
-    brave
+    pkgsUnstable.vscode
+    pkgsUnstable.brave
   ];
 }
