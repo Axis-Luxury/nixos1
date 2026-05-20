@@ -30,7 +30,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.alexis = import ./home;
+          home-manager.users.alexis = import ./home { pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; };
         }
       ];
     };
