@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./extensions.nix
+    ./extensiones.nix
     ./dconf.nix
+    ./services.nix
   ];
 }
