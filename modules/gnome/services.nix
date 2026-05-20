@@ -1,3 +1,4 @@
+{pkgs, ...}:
 {
   services.xserver = {
     enable = true;
@@ -9,7 +10,7 @@
       variant = "";
     };
   };
-  
+
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     extension-manager
