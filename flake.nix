@@ -11,27 +11,21 @@
   let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem { # crear sistema 
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
-
-      specialArgs = {
-        pkgsUnstable = import unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
 
       modules = [
         ./configuration.nix
-        
         home-manager.nixosModules.home-manager
 
-        {
+        ({ pkgs, ... }: {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.alexis = import ./home { pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux; };
-        }
+          home-manager.users.alexis = import ./home {
+            inherit pkgs;
+          };
+        })
       ];
     };
   };
