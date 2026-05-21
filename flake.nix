@@ -11,22 +11,29 @@
     };
   };
 
-  outputs = { self, nixpkgs, unstable, home-manager, ... }:
+  outputs = { nixpkgs, unstable, home-manager, ... }:
   let
     system = "x86_64-linux";
+
+    overlay-unstable = final: prev: {
+      unstable = import unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    };
+
+    pkgs = import nixpkgs {
+      inherit system;
+      overlays = [ overlay-unstable ];
+      config.allowUnfree = true;
+    };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-
-      specialArgs = {
-        pkgsUnstable = import unstable {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      };
+      inherit system pkgs;
 
       modules = [
         ./configuration.nix
+
         home-manager.nixosModules.home-manager
 
         {
