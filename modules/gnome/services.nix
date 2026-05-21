@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     gnome-tweaks
-    extension-manager
+    gnome-extension-manager
     gnome-browser-connector
   ];
 }
