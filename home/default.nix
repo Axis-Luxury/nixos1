@@ -3,8 +3,6 @@
 {
   imports = [
     ./desktop
-    ./editors
-    ./shell
   ];
 
   programs.home-manager.enable = true;
