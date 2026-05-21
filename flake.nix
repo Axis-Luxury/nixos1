@@ -18,6 +18,13 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
 
+      specialArgs = {
+        pkgsUnstable = import unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
+
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
