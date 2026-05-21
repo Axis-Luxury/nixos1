@@ -13,12 +13,15 @@
       plugins = [ "git" ];
     };
 
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-    ];
+#    plugins = [
+#      {
+#        name = "powerlevel10k";
+#        src = pkgs.zsh-powerlevel10k;
+#        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+#      }
+#    ];
+    shellInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+    '';
   };
 }
