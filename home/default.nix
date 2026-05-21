@@ -5,7 +5,9 @@
     ./gnome.nix
   ];
 
-  home.stateVersion = "25.05";
-
   programs.home-manager.enable = true;
+  home.username = "alexis";
+  home.homeDirectory = "/home/alexis";
+
+  home.stateVersion = "25.05";
 }
