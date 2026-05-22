@@ -23,8 +23,8 @@
     };
 
     cursorTheme = {
-      name = "WinSur-white-cursors";
-      package = pkgs.winsur-white-cursors;
+      name = "capitain-cursors";
+      package = pkgs.capitaine-cursors;
       size = 24;
     };
 
