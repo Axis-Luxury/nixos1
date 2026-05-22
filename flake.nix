@@ -40,7 +40,12 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.alexis = import ./home;
+          home-manager.users.alexis = {
+            import = [
+              ./home
+              ./modules/programs/kitty.nix
+            ];
+          };
         }
       ];
     };
