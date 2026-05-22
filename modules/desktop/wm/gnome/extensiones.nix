@@ -6,6 +6,5 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.system-monitor
-    gtop
   ];
 }
