@@ -1,3 +1,4 @@
+{pkgs,...}:
 {
   security.sudo.extraConfig = "Defaults env_reset,pwfeedback";
   virtualisation.virtualbox.guest.enable = true;
@@ -13,4 +14,8 @@
     jack.enable = true;
   };
   services.libinput.enable = true;   # Enable touchpad support (enabled default in most desktopManager).
+  
+  environment.systemPackages = with pkgs; [
+    libinput # Touchpad support
+  ];
 }

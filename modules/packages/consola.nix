@@ -6,18 +6,8 @@
     git
     fastfetch # Fast fetch for nix
     fzf # buscador de terminal
-    libinput # Touchpad support
-    eza # ls mejorado
     bat # cat mejorado
     zoxide # cd mejorado
-    pkgs.nixd 
-    nh
-    nix-search-tv
-    nix-tree
-    nix-index
-    ranger
-    yazi
-    zsh-completions
     tree
     htop
   ];
