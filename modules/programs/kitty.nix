@@ -1,9 +1,9 @@
-{config, ...}: 
+{theme, ...}: 
 {
   programs.kitty = {
     enable = true;
     settings = let
-      inherit (config.theme.colorscheme) xcolors;
+      inherit (theme) xcolors;
     in {
       # Fonts
       font_family = "GeistMono Nerd Font Mono";
