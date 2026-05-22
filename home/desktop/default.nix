@@ -1,6 +1,6 @@
 {
   imports = [
-    ./gnome.nix
+    ./dconf.nix
     ./gtk.nix
   ];
 }
