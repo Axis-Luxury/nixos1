@@ -23,8 +23,8 @@
     };
 
     cursorTheme = {
-      name = "capitain-cursors";
-      package = pkgs.capitaine-cursors;
+      name = "adwaita";
+      package = pkgs.adwaita-cursors;
       size = 24;
     };
 
