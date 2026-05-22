@@ -1,4 +1,4 @@
-{theme, ...}: 
+{config, theme, ...}: 
 {
   programs.kitty = {
     enable = true;
