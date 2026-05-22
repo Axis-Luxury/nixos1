@@ -33,8 +33,4 @@
       size = 11;
     };
   };
-
-  fonts.packages = with pkgs; [
-    geist-font
-  ];
 }
