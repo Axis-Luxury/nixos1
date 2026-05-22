@@ -23,14 +23,18 @@
     };
 
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "WinSur-white-cursors";
+      package = pkgs.winsur-white-cursors;
       size = 24;
     };
 
     font = {
-      name = "Inter";
+      name = "Geist";
       size = 11;
     };
   };
+
+  fonts.packages = with pkgs; [
+    geist-font
+  ];
 }
