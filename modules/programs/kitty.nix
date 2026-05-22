@@ -1,5 +1,9 @@
-{theme, ...}: 
+{theme, pkgs, ...}: 
 {
+  environment.systemPackages = with pkgs; [
+    kitty
+  ];
+
   programs.kitty = {
     enable = true;
     settings = let
