@@ -23,8 +23,8 @@
     };
 
     cursorTheme = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-cursor-theme;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
       size = 24;
     };
 
