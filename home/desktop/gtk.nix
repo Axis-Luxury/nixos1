@@ -23,7 +23,7 @@
     };
 
     cursorTheme = {
-      name = "adwaita";
+      name = "adwaita-dark";
       package = pkgs.adwaita-cursors;
       size = 24;
     };
