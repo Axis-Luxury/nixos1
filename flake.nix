@@ -43,7 +43,6 @@
           home-manager.users.alexis = { 
             imports = [
               ./home
-              ./modules/programs/kitty.nix
             ];
           };
         }
