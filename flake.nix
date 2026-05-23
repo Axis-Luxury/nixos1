@@ -45,6 +45,10 @@
               ./home
             ];
           };
+
+          home-manager.extraSpecialArgs = { 
+            theme = import ./theme.nix { inherit (pkgs) lib;}; 
+          };
         }
       ];
     };
