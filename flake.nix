@@ -46,9 +46,9 @@
             ];
           };
 
-#          home-manager.extraSpecialArgs = { 
-#            theme = import ./modules/users/theme.nix { inherit (pkgs) lib;}; 
-#          };
+          home-manager.extraSpecialArgs = { 
+            theme = import ./modules/users/theme.nix { inherit (pkgs) lib;}; 
+          };
         }
       ];
     };
