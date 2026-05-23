@@ -2,21 +2,21 @@
 
 let
   # ── Cursor: material-dark ──────────────────────────────────────────
-  material-dark-cursors = pkgs.stdenvNoCC.mkDerivation {
-    pname = "material-dark-cursors";
-    version = "unstable";
-    src = pkgs.fetchFromGitHub {
-      owner = "varlesh";
-      repo = "material-cursors";
-      rev = "2a5f302fefe04678c421473bed636b4d87774b4a";
-      hash = "sha256-uC2qx3jF4d2tGLPnXEpogm0vyC053MvDVVdVXX8AZ60=";
-    };
-    dontBuild = true;
-    installPhase = ''
-      mkdir -p $out/share/icons
-      cp -r src/material_dark_cursors $out/share/icons/
-    '';
-  };
+  # material-dark-cursors = pkgs.stdenvNoCC.mkDerivation {
+  #   pname = "material-dark-cursors";
+  #   version = "unstable";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "varlesh";
+  #     repo = "material-cursors";
+  #     rev = "2a5f302fefe04678c421473bed636b4d87774b4a";
+  #     hash = "sha256-uC2qx3jF4d2tGLPnXEpogm0vyC053MvDVVdVXX8AZ60=";
+  #   };
+  #   dontBuild = true;
+  #   installPhase = ''
+  #     mkdir -p $out/share/icons
+  #     cp -r src/material_dark_cursors $out/share/icons/
+  #   '';
+  # };
 
   # ── Iconos: kora ───────────────────────────────────────────────────
   kora-icons = pkgs.stdenvNoCC.mkDerivation {
