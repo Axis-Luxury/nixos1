@@ -9,9 +9,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, unstable, home-manager, ... }:
+  outputs = { nixpkgs, unstable, home-manager, stylix, ... }:
   let
     system = "x86_64-linux";
 
@@ -35,6 +36,8 @@
         ./configuration.nix
 
         home-manager.nixosModules.home-manager
+
+        stylix.nixosModules.stylix
 
         {
           home-manager.useGlobalPkgs = true;
