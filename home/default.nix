@@ -3,6 +3,7 @@
 {
   imports = [
     ./desktop
+    ./theme.nix
   ];
 
   programs.home-manager.enable = true;
