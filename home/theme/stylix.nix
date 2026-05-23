@@ -44,7 +44,7 @@ in
   stylix = {
     enable = true;
 
-    image = ./wallpaper.jpg;
+    image = ../../assets/wallpapers/dogblood.png;
 
     polarity = "dark";
 
