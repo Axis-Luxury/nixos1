@@ -26,7 +26,7 @@ in
     size = 24;
   };
 
-  fonts.packages = [
+  home.packages = [
     assets.sf-pro
     assets.jetbrains-mono
   ];
