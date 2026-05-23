@@ -92,7 +92,7 @@ in
     };
   };
 
-  fonts.packages = [
+  home.packages = [
     sf-pro
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.noto-fonts-emoji
