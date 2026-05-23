@@ -9,7 +9,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";  # <- esto es lo que faltaba
+    };
   };
 
   outputs = { nixpkgs, unstable, home-manager, stylix, ... }:
