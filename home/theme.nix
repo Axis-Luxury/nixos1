@@ -79,6 +79,10 @@ in
       package = kora-icons;
       name = "kora";
     };
+    font = {
+      name = "SF Pro";
+      size = 11;
+    };
   };
 
   # ── Fuentes ────────────────────────────────────────────────────────
