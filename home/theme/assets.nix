@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 {
   kora = pkgs.stdenv.mkDerivation {
