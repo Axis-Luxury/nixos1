@@ -58,15 +58,15 @@ in
 {
   # ── Paquetes ───────────────────────────────────────────────────────
   home.packages = [
-    material-dark-cursors
+    pkgs.bibata-cursors
     kora-icons
     sf-pro-fonts
   ];
 
   # ── Cursor ─────────────────────────────────────────────────────────
   home.pointerCursor = {
-    package = material-dark-cursors;
-    name = "material_dark_cursors";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 24;
     gtk.enable = true;
     x11.enable = true;
