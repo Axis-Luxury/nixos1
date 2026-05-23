@@ -80,7 +80,7 @@ in
       name = "kora";
     };
     font = {
-      name = "SF Pro";
+      name = "SF Pro Bold";
       size = 11;
     };
   };
