@@ -3,6 +3,7 @@
 {
   imports = [
     ./desktop
+    ./programs
   ];
 
   programs.home-manager.enable = true;
