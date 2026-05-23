@@ -1,8 +1,9 @@
-{ ... }:
-{
+{config, ...}: {
   programs.kitty = {
     enable = true;
-    settings = {
+    settings = let
+      inherit (config.theme.colorscheme) xcolors;
+    in {
       # Fonts
       font_family = "GeistMono Nerd Font Mono";
       bold_font = "auto";
@@ -53,62 +54,80 @@
 
       # Color scheme
       background_opacity = "1.0";
-      foreground = "#C5C8C9";
-      background = "#131A1C";
-      selection_foreground = "#131A1C";
-      selection_background = "#F5E0DC";
+      foreground = xcolors.white;
+      background = xcolors.black2;
+      selection_foreground = xcolors.black2;
+      selection_background = xcolors.rosewater;
 
       # Cursor colors
-      cursor = "#F5E0DC";
-      cursor_text_color = "#131A1C";
+      cursor = xcolors.rosewater;
+      cursor_text_color = xcolors.black2;
 
-      # URL
-      url_color = "#F5E0DC";
+      # URL underline color when hovering with mouse
+      url_color = xcolors.rosewater;
 
-      # Window borders
-      active_border_color = "#96CDFB";
-      inactive_border_color = "#363D3E";
-      bell_border_color = "#FAE3B0";
+      # Window border colors and terminal bell colors
+      active_border_color = xcolors.blue;
+      inactive_border_color = xcolors.gray0;
+      bell_border_color = xcolors.yellow;
       visual_bell_color = "none";
 
       # Tab bar colors
-      active_tab_foreground = "#111719";
-      active_tab_background = "#96CDFB";
-      inactive_tab_foreground = "#C5C8C9";
-      inactive_tab_background = "#131A1C";
-      tab_bar_background = "#111719";
+      active_tab_foreground = xcolors.black1;
+      active_tab_background = xcolors.blue;
+      inactive_tab_foreground = xcolors.white;
+      inactive_tab_background = xcolors.black2;
+      tab_bar_background = xcolors.black1;
 
-      # Marks
-      mark1_foreground = "#131A1C";
-      mark1_background = "#C9CBFF";
-      mark2_foreground = "#131A1C";
-      mark2_background = "#DDB6F2";
-      mark3_foreground = "#131A1C";
-      mark3_background = "#89DCEB";
+      # Colors for marks (marked text in the terminal)
+      mark1_foreground = xcolors.black2;
+      mark1_background = xcolors.lavender;
+      mark2_foreground = xcolors.black2;
+      mark2_background = xcolors.mauve;
+      mark3_foreground = xcolors.black2;
+      mark3_background = xcolors.sky;
 
-      # 16 colors
-      color0 = "#363D3E";
-      color8 = "#4A5051";
-      color1 = "#F28FAD";
-      color9 = "#F28FAD";
-      color2 = "#ABE9B3";
-      color10 = "#ABE9B3";
-      color3 = "#FAE3B0";
-      color11 = "#FAE3B0";
-      color4 = "#96CDFB";
-      color12 = "#96CDFB";
-      color5 = "#F5C2E7";
-      color13 = "#F5C2E7";
-      color6 = "#89DCEB";
-      color14 = "#89DCEB";
-      color7 = "#C5C8C9";
-      color15 = "#C5C8C9";
+      # The basic 16 colors
+      # black
+      color0 = xcolors.gray0;
+      color8 = xcolors.gray1;
+
+      # red
+      color1 = xcolors.red;
+      color9 = xcolors.red;
+
+      # green
+      color2 = xcolors.green;
+      color10 = xcolors.green;
+
+      # yellow
+      color3 = xcolors.yellow;
+      color11 = xcolors.yellow;
+
+      # blue
+      color4 = xcolors.blue;
+      color12 = xcolors.blue;
+
+      # magenta
+      color5 = xcolors.pink;
+      color13 = xcolors.pink;
+
+      # cyan
+      color6 = xcolors.sky;
+      color14 = xcolors.sky;
+
+      # white
+      color7 = xcolors.white;
+      color15 = xcolors.white;
     };
 
     keybindings = {
+      # Clipboard
       "ctrl+shift+c" = "copy_to_clipboard";
       "ctrl+shift+v" = "paste_from_clipboard";
       "ctrl+shift+s" = "paste_from_selection";
+
+      # Scrolling
       "ctrl+shift+up" = "scroll_line_up";
       "ctrl+shift+k" = "scroll_line_up";
       "ctrl+shift+down" = "scroll_line_down";
@@ -118,6 +137,8 @@
       "ctrl+shift+home" = "scroll_home";
       "ctrl+shift+end" = "scroll_end";
       "ctrl+shift+h" = "show_scrollback";
+
+      # Window management
       "ctrl+shift+enter" = "new_window";
       "ctrl+shift+n" = "new_os_window";
       "ctrl+shift+w" = "close_window";
@@ -137,6 +158,8 @@
       "ctrl+shift+8" = "eighth_window";
       "ctrl+shift+9" = "ninth_window";
       "ctrl+shift+0" = "tenth_window";
+
+      # Tab management
       "ctrl+shift+right" = "next_tab";
       "ctrl+shift+left" = "previous_tab";
       "ctrl+shift+t" = "new_tab";
@@ -144,11 +167,15 @@
       "ctrl+shift+." = "move_tab_forward";
       "ctrl+shift+," = "move_tab_backward";
       "ctrl+shift+alt+t" = "set_tab_title";
+
+      # Layout management
       "ctrl+shift+l" = "next_layout";
       "ctrl+alt+t" = "goto_layout tall";
       "ctrl+alt+s" = "goto_layout stack";
       "ctrl+alt+p" = "last_used_layout";
       "ctrl+alt+z" = "toggle_layout stack";
+
+      # Font sizes
       "ctrl+shift+equal" = "change_font_size all +1.0";
       "ctrl+shift+minus" = "change_font_size all -1.0";
       "ctrl+shift+backspace" = "change_font_size all 0";

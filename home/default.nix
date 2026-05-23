@@ -4,6 +4,7 @@
   imports = [
     ./desktop
     ./programs
+    ./theme
   ];
 
   programs.home-manager.enable = true;
