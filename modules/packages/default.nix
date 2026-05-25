@@ -5,5 +5,6 @@
     ./nix-tools.nix
     ./unstable.nix
     ./windows-utils.nix
+    ./easyeffects.nix
   ];
 }
