@@ -10,9 +10,6 @@
   ];
 
   # Lenovo LOQ (LenovoLegionLinux)
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    lenovoLegionLinux
-  ];
   boot.kernelModules = [ "legion_laptop" ];
   services.hardware.openrgb.enable = true;  # si usas RGB
 
