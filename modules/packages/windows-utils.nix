@@ -1,7 +1,7 @@
 {config, pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
-    gnome.baobab          # WinDirStat
+    baobab          # WinDirStat
     nemo                  # OneCommander
     eyedropper            # Color Picker
     easyeffects           # Nahimic
