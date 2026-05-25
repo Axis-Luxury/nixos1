@@ -4,5 +4,6 @@
     ./file-managers.nix
     ./nix-tools.nix
     ./unstable.nix
+    ./windows-utils.nix
   ];
 }
