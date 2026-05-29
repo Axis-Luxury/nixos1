@@ -1,10 +1,10 @@
 {pkgs,...}:
 {
-  security.sudo.extraConfig = "Defaults env_reset,pwfeedback";
-  virtualisation.virtualbox.guest.enable = true;
-  hardware.graphics.enable = true;
-  services.printing.enable = true;
-  security.rtkit.enable = true;
+  security.sudo.extraConfig = "Defaults env_reset,pwfeedback"; # **** sudo password input
+  virtualisation.virtualbox.guest.enable = true; # virtualbox
+  hardware.graphics.enable = true; # drivers graficos
+  services.printing.enable = true; # impresoras
+  security.rtkit.enable = true; # Real-time kernel
   services.pulseaudio.enable = false;   # Enable sound with pipewire.
   services.pipewire = {
     enable = true;
@@ -13,7 +13,7 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  services.libinput.enable = true;   # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;   # touchpad
   
   environment.systemPackages = with pkgs; [
     libinput # Touchpad support
