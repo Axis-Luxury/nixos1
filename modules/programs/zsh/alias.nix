@@ -1,19 +1,60 @@
-{pkgs,...}:
+{ pkgs, ... }:
+
 {
-  programs.zsh = {
-    shellAliases = {
-      ls = "eza --icons";
-      ll = "eza -lah --icons --git";
-      tree = "eza --tree --icons";
-      nfs = "sudo nixos-rebuild switch --flake . --show-trace";
-      nrs = "sudo nixos-rebuild switch --show-trace";
-      neg = "sudo nix-env --delete-generations +2 --profile /nix/var/nix/profiles/system";
-      nsg = "sudo nix-store --gc";
-      ncg = "sudo nix-collect-garbage";
-    };
+  programs.zsh.shellAliases = {
+
+    # --- Navegación ---
+    ls    = "eza --icons";                   # Listar archivos
+    ll    = "eza -lah --icons --git";        # Lista detallada + git
+    tree  = "eza --tree --icons";            # Vista árbol
+
+    initContent = ''
+      alias ..="cd .."
+      alias ...="cd ../.."
+      alias ....="cd ../../.."
+    '';
+
+    # --- Reconstrucción NixOS ---
+    nfs   = "sudo nixos-rebuild switch --flake . --show-trace";  # Rebuild con flake
+    nrs   = "sudo nixos-rebuild switch --show-trace";            # Rebuild sin flake
+
+    # --- Reconstrucción Home Manager ---
+    hmf   = "home-manager switch --flake . --show-trace";        # HM con flake
+    hms   = "home-manager switch --show-trace";                  # HM sin flake
+
+    # --- Actualizaciones ---
+    unf   = "nix flake update";              # Actualizar flake.lock
+    unc   = "sudo nix-channel --update";    # Actualizar canales legacy
+
+    # --- Búsqueda / Pruebas ---
+    search = "nix search nixpkgs#";         # Buscar paquetes
+    probar = "nix shell nixpkgs#";          # Shell temporal
+
+    ns    = "nix-shell";                     # Entrar a nix-shell
+    nd    = "nix develop";                   # Entrar a entorno flake
+
+    # --- Limpieza / Optimización ---
+    gcroot  = "sudo nix-collect-garbage -d";                      # Limpia generaciones y paquetes viejos
+    delgen  = "sudo nix-collect-garbage --delete-older-than 7d";  # Borra generaciones > 7 días
+    optimize = "sudo nix-store --optimize";                       # Deduplicar paquetes
+
+    # --- Git ---
+    gs     = "git status";                   # Estado repo
+    ga     = "git add";                      # Añadir cambios
+    gc     = "git commit";                   # Crear commit
+    gp     = "git push";                     # Subir cambios
+
+    glog   = "git log --oneline --graph --decorate";  # Historial compacto
+    gdiff  = "git diff";                               # Ver cambios
+
+    # --- NH ---
+    nos    = "nh os switch .";               # Rebuild NixOS con nh
+    nhome  = "nh home switch .";             # Rebuild Home Manager con nh
+    nclean = "nh clean all";                 # Limpieza completa
   };
 
   environment.systemPackages = with pkgs; [
     eza
+    nh
   ];
 }
