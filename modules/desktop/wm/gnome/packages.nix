@@ -4,11 +4,5 @@
     gnome-tweaks       # Retoques
     gnome-extension-manager
 #    gnome-browser-connector
-    gnome-calendar      # Calendario
-    gnome-characters    # Selector de caracteres/emojis
-    gnome-clocks        # Relojes/Alarma
-    gnome-font-viewer   # Visor de fuentes tipográficas
-    gnome-terminal     # Terminal de GNOME
-    gnome-system-monitor    # Monitor del sistema
   ];
 }
