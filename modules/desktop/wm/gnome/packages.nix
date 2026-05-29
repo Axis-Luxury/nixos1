@@ -8,10 +8,7 @@
     gnome-characters    # Selector de caracteres/emojis
     gnome-clocks        # Relojes/Alarma
     gnome-font-viewer   # Visor de fuentes tipográficas
-    gnome-console
-    gnome-bluetooth
-    gnome-backgrounds
-    gnome-control-center
-    gnome-disk-utility
+    gnome-console     # Terminal de GNOME
+    gnome-system-monitor    # Monitor del sistema
   ];
 }
