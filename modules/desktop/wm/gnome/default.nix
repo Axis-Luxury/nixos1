@@ -3,7 +3,7 @@
 {
   imports = [
     ./extensiones.nix
-    ./services.nix
+    ./xserver.nix
     ./exclude.nix
   ];
 }
