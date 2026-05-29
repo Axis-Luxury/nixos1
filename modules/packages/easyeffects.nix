@@ -1,6 +1,6 @@
-{pkgsx,...}:
+{pkgs,...}:
 {
-  environment.systemPackages = with pkgsx; [
+  environment.systemPackages = with pkgs; [
     easyeffects           # Nahimic
   ];
     # PipeWire (necesario para EasyEffects)
