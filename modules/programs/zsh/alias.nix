@@ -28,7 +28,7 @@
 
     # --- Búsqueda / Pruebas ---
     search = "nix search nixpkgs#";         # Buscar paquetes
-    probar = "nix shell nixpkgs#";          # Shell temporal
+    probar = "nix-shell -p";          # Probar paquetes sin instalar
 
     ns    = "nix-shell";                     # Entrar a nix-shell
     nd    = "nix develop";                   # Entrar a entorno flake
