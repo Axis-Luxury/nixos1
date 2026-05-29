@@ -5,7 +5,6 @@
   services.gnome.core-developer-tools.enable = false; # herramientas de desarrollo de GNOME
   environment.gnome.excludePackages = with pkgs; [
     gnome-contacts
-    gnome-documents
     gnome-maps
     gnome-music
     gnome-photos
