@@ -35,7 +35,7 @@
 
     # --- Limpieza / Optimización ---
     gcroot  = "sudo nix-collect-garbage -d";                      # Limpia generaciones y paquetes viejos
-    delgen  = "sudo nix-collect-garbage --delete-older-than 7d";  # Borra generaciones > 7 días
+    delgen  = "sudo nix-env --delete-generations +2 --profile /nix/var/nix/profiles/system";  # Eliminar generaciones antiguas +2
     optimize = "sudo nix-store --optimize";                       # Deduplicar paquetes
 
     # --- Git ---
