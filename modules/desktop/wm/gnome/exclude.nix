@@ -1,10 +1,9 @@
 {pkgs, ...}:
 {
-  services.gnome.games.enable = false; # Deshabilitar juegos de GNOME
-  services.gnome.core-apps.enable = true; # Deshabilitar aplicaciones principales de GNOME
-  services.gnome.core-developer-tools.enable = false; # Deshabilitar herramientas de desarrollo de GNOME
+  services.gnome.games.enable = false; # juegos de GNOME
+  services.gnome.core-apps.enable = true; # aplicaciones principales de GNOME
+  services.gnome.core-developer-tools.enable = false; # herramientas de desarrollo de GNOME
   environment.gnome.excludePackages = with pkgs; [
-    xterm
     gnome-contacts
     gnome-documents
     gnome-maps
