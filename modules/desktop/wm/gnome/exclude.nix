@@ -8,7 +8,6 @@
     gnome-maps
     gnome-music
     gnome-photos
-    gnome-videos
     gnome-weather
   ];
 }
