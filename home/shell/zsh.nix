@@ -29,6 +29,23 @@
       initExtra = ''
         # Esto cargará el archivo .p10k.zsh que Home Manager acaba de crear
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+        # Ctrl + ← / →
+        bindkey '^[[1;5D' backward-word
+        bindkey '^[[1;5C' forward-word
+
+        # Home / End
+        bindkey '^[[H' beginning-of-line
+        bindkey '^[[F' end-of-line
+
+        # Ctrl + Backspace
+        bindkey '^H' backward-kill-word
+
+        # Ctrl + Delete
+        bindkey '^[[3;5~' kill-word
+
+        # Tab = autocompletar
+        bindkey '^I' expand-or-complete
       '';
   };
 }
