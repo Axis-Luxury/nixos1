@@ -9,7 +9,8 @@
     bat # cat mejorado
     zoxide # cd mejorado
     tree
-    htop
+#    htop
+    btop
   ];
 } 
   
