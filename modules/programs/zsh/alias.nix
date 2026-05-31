@@ -8,11 +8,9 @@
     ll    = "eza -lah --icons --git";        # Lista detallada + git
     tree  = "eza --tree --icons";            # Vista árbol
 
-    initContent = ''
-      alias ..="cd .."
-      alias ...="cd ../.."
-      alias ....="cd ../../.."
-    '';
+    ".."  = "cd ..";
+    "..." = "cd ../..";
+    "...." = "cd ../../..";
 
     # --- Reconstrucción NixOS ---
     nfs   = "sudo nixos-rebuild switch --flake . --show-trace";  # Rebuild con flake
@@ -36,7 +34,10 @@
     # --- Limpieza / Optimización ---
     gcroot  = "sudo nix-collect-garbage -d";                      # Limpia generaciones y paquetes viejos
     delgen  = "sudo nix-env --delete-generations +2 --profile /nix/var/nix/profiles/system";  # Eliminar generaciones antiguas +2
-    optimize = "sudo nix-store --optimize";                       # Deduplicar paquetes
+    optimize3 = "nix-store --optimize -vvv";                       # Deduplicar paquetes. Nivel usuario. Verbose nivel 3
+    optimize2 = "nix-store --optimize -vv";                       # Deduplicar paquetes. Nivel usuario. Verbose nivel 2
+    optimize1 = "nix-store --optimize -v";                         # Deduplicar paquetes. Nivel usuario. Verbose nivel 1
+    optimize = "nix-store --optimize -vv 2>&1 | pv -l -p -e > /dev/null";  # Deduplicar paquetes. Nivel usuario. Verbose nivel 2 + barra de progreso con pv
 
     # --- Git ---
     gs     = "git status";                   # Estado repo
@@ -56,5 +57,6 @@
   environment.systemPackages = with pkgs; [
     eza
     nh
+    pv
   ];
 }
