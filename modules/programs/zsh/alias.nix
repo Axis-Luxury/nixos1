@@ -37,8 +37,18 @@
     optimize3 = "nix-store --optimize -vvv";                       # Deduplicar paquetes. Nivel usuario. Verbose nivel 3
     optimize2 = "nix-store --optimize -vv";                       # Deduplicar paquetes. Nivel usuario. Verbose nivel 2
     optimize1 = "nix-store --optimize -v";                         # Deduplicar paquetes. Nivel usuario. Verbose nivel 1
-    optimize = "nix-store --optimize -vv 2>&1 | pv -l -p -e > /dev/null";  # Deduplicar paquetes. Nivel usuario. Verbose nivel 2 + barra de progreso con pv
-
+    optimize = "nix-store --optimize -vv 2>&1 | pv -p -b -r -t -i 0.5 -e > /dev/null";
+    # ^ Optimiza el store mostrando una barra tipo Pacman.
+    # 2>&1: Redirige los logs de Nix hacia 'pv' para poder procesarlos.
+    # > /dev/null: Oculta el texto basura para dejar solo la barra limpia.
+    # Banderas de pv:
+    #   -p : Dibuja la barra de progreso visual [=====>    ]
+    #   -b : Cuenta la cantidad de archivos procesados
+    #   -r : Muestra la velocidad (archivos por segundo)
+    #   -t : Muestra el cronómetro de tiempo transcurrido
+    #   -e : Muestra el ETA (tiempo estimado restante)
+    #   -i 0.5 : Actualiza la pantalla cada 0.5s para evitar parpadeos
+    
     # --- Git ---
     gs     = "git status";                   # Estado repo
     ga     = "git add";                      # Añadir cambios
